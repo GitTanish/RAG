@@ -38,3 +38,4 @@ langchain-ollama
 langchain-openai
 langchain-transformers
 wikipedia
+langchain-groq
