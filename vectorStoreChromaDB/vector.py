@@ -1,8 +1,8 @@
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings 
 from langchain_core.documents import Document
 
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2") # 200 
 
 
 
@@ -33,6 +33,7 @@ doc5 = Document(
 
 docs = [doc1, doc2, doc3, doc4, doc5]
 
+# persistence
 vectorstore = Chroma(
     collection_name="local_store",
     embedding_function=embeddings,
@@ -46,11 +47,11 @@ print(a)
 
 # search documents
 answer=vectorstore.similarity_search("Which fish is best for beginners?", k=2)
-print(answer)
+print(f"{answer}\n")
 
 # search with similarity score
 answer1=vectorstore.similarity_search_with_score("  Angelfish difficulty level?", k=2)
-print(answer1)
+print(f"{answer1}\n")
 
 # metadata filtering
 

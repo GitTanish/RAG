@@ -70,6 +70,7 @@ retriever = vectorstore.as_retriever(
 # ---- Query ----
 query = "Which fish is best for beginners?"
 results = retriever.invoke(query)
+print(results)
 # Chroma often requires calling MMR directly
 # ---- Step 1: MMR retrieval (no retriever wrapper) ----
 # mmr_docs = vs.max_marginal_relevance_search(

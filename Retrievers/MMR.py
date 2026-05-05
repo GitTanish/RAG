@@ -23,7 +23,7 @@ retriever = vectorstore_faiss.as_retriever(
     search_kwargs={"k": 3, "lambda_mult": 0.5} # k = top 2 results, lambda_mult = 0.5 for balanced relevance and diversity  
 )
 
-query = "What is embeddings??"
+query = "What makes life easy?"
 results = retriever.invoke(query)
 for i , doc in enumerate(results):
     print(f"\n-- Result {i+1} --")
